@@ -1,0 +1,89 @@
+2024-07-12 12:51:24,431 Generated random file: epyaeusjfr of size: 10485760
+2024-07-12 12:51:24,431 Requests: https://server4:443/epyaeusjfr
+2024-07-12 12:51:24,467 
+2024-07-12 12:51:24,467 Command: WAITFORSERVER=server:443 CERTS=/tmp/certs_7kz9h7eg/ TESTCASE_SERVER=transfer TESTCASE_CLIENT=transfer WWW=/tmp/www_w7j48gpw/ DOWNLOADS=/tmp/download_tv_5wbgo/ SERVER_LOGS=/tmp/logs_server_t4mhsbg7 CLIENT_LOGS=/tmp/logs_client_dxe1t33k SCENARIO="simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400" CLIENT=ghcr.io/facebook/proxygen/mvfst-interop:latest SERVER=ana0/quiche-qns:latest REQUESTS="https://server4:443/epyaeusjfr" VERSION="0x1"  docker compose --env-file empty.env up --abort-on-container-exit --timeout 1 sim client server 
+2024-07-12 12:52:24,496 time="2024-07-12T12:51:24Z" level=warning msg="/home/admin/ORIGINAL0INTEROP/quic-interop-runner/docker-compose.yml: `version` is obsolete"
+ Container sim  Created
+ Container client  Recreate
+ Container server  Recreate
+ Container client  Recreated
+ Container server  Recreated
+Attaching to client, server, sim
+sim     | waiting 10s for server:443
+server  | Setting up routes...
+server  | Actual changes:
+server  | tx-checksumming: off
+server  | 	tx-checksum-ip-generic: off
+server  | 	tx-checksum-sctp: off
+server  | tcp-segmentation-offload: off
+server  | 	tx-tcp-segmentation: off [requested on]
+server  | 	tx-tcp-ecn-segmentation: off [requested on]
+server  | 	tx-tcp-mangleid-segmentation: off [requested on]
+server  | 	tx-tcp6-segmentation: off [requested on]
+client  | + set -o nounset
+client  | + VERSION=1
+client  | + HQ_CLI=/proxygen/_build/proxygen/bin/hq
+client  | + PORT=443
+client  | + LOGLEVEL=2
+client  | + /setup.sh
+client  | Setting up routes...
+client  | Actual changes:
+client  | tx-checksumming: off
+client  | 	tx-checksum-ip-generic: off
+client  | 	tx-checksum-sctp: off
+client  | tcp-segmentation-offload: off
+client  | 	tx-tcp-segmentation: off [requested on]
+client  | 	tx-tcp-ecn-segmentation: off [requested on]
+client  | 	tx-tcp-mangleid-segmentation: off [requested on]
+client  | 	tx-tcp6-segmentation: off [requested on]
+server  | Endpoint's IPv4 address is 193.167.100.100
+client  | Endpoint's IPv4 address is 193.167.0.100
+client  | Endpoint's IPv6 address is fd00:cafe:cafe::100
+server  | Endpoint's IPv6 address is fd00:cafe:cafe:100::100
+client  | + PROTOCOL=hq-interop
+client  | + HTTPVERSION=0.9
+client  | + CONN_FLOW_CONTROL=107374182
+client  | + STREAM_FLOW_CONTROL=107374182
+client  | ++ paste -sd,
+client  | ++ awk -F / '{ print "/" $4 }'
+client  | ++ tr ' ' '\n'
+client  | ++ echo https://server4:443/epyaeusjfr
+client  | + INVOCATIONS=/epyaeusjfr
+client  | + EARLYDATA=false
+client  | + PSK_FILE=
+client  | + '[' -n transfer ']'
+client  | + case "${TESTCASE}" in
+client  | + STREAM_FLOW_CONTROL=262144
+client  | + CONN_FLOW_CONTROL=2621440
+client  | + '[' client == client ']'
+client  | + /wait-for-it.sh sim:57832 -s -t 10
+server  | supported
+server  | ## Starting quiche server...
+server  | ## Server params: 
+server  | ## Test case: transfer
+client  | wait-for-it.sh: waiting 10 seconds for sim:57832
+sim     | server:443 is available after 1.038995579s
+sim     | Using scenario: simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400
+client  | wait-for-it.sh: sim:57832 is available after 1 seconds
+client  | + echo 'Starting QUIC client...'
+client  | Starting QUIC client...
+client  | + '[' -n https://server4:443/epyaeusjfr ']'
+client  | + REQS=("${REQUESTS}")
+client  | + REQ=https://server4:443/epyaeusjfr
+client  | ++ echo https://server4:443/epyaeusjfr
+client  | ++ cut -d: -f1
+client  | ++ cut -d/ -f3
+client  | + SERVER=server4
+client  | + for INVOCATION in ${INVOCATIONS}
+client  | + echo 'requesting files '\''/epyaeusjfr'\'''
+client  | requesting files '/epyaeusjfr'
+client  | + /proxygen/_build/proxygen/bin/hq --mode=client --host=server4 --port=443 --protocol=hq-interop --httpversion=0.9 --use_version=true --quic-version=1 --path=/epyaeusjfr --early_data=false --psk_file= --conn_flow_control=2621440 --stream_flow_control=262144 --outdir=/downloads --logdir=/logs --qlogger_path=/logs --v=2
+client  | + tee /logs/client.log
+client  | I20240712 12:51:26.478380    43 HQClient.cpp:50] HQClient connecting to 193.167.100.100:443
+client  | I20240712 12:51:27.689613    43 CurlClient.cpp:187] Sending request for /epyaeusjfr
+
+2024-07-12 12:52:24,496 Test failed: took longer than 60s.
+2024-07-12 12:52:24,542 time="2024-07-12T12:52:24Z" level=warning msg="The \"SERVER\" variable is not set. Defaulting to a blank string."
+time="2024-07-12T12:52:24Z" level=warning msg="The \"CLIENT\" variable is not set. Defaulting to a blank string."
+invalid spec: :/www:ro: empty section between colons
+

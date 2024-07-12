@@ -1,0 +1,55 @@
+2024-07-12 12:45:51,043 Generated random file: eyghfvzyqh of size: 10485760
+2024-07-12 12:45:51,043 Requests: https://server4:443/eyghfvzyqh
+2024-07-12 12:45:51,079 
+2024-07-12 12:45:51,079 Command: WAITFORSERVER=server:443 CERTS=/tmp/certs_7v7pigo5/ TESTCASE_SERVER=transfer TESTCASE_CLIENT=transfer WWW=/tmp/www_tp9n8pc3/ DOWNLOADS=/tmp/download_oqdq1m77/ SERVER_LOGS=/tmp/logs_server_qytrpvu2 CLIENT_LOGS=/tmp/logs_client_yigg82os SCENARIO="simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400" CLIENT=ghcr.io/ngtcp2/ngtcp2-interop:latest SERVER=ana0/quiche-qns:latest REQUESTS="https://server4:443/eyghfvzyqh" VERSION="0x1"  docker compose --env-file empty.env up --abort-on-container-exit --timeout 1 sim client server 
+2024-07-12 12:46:23,938 time="2024-07-12T12:45:51Z" level=warning msg="/home/admin/ORIGINAL0INTEROP/quic-interop-runner/docker-compose.yml: `version` is obsolete"
+ Container sim  Created
+ Container client  Recreate
+ Container server  Recreate
+ Container server  Recreated
+ Container client  Recreated
+Attaching to client, server, sim
+sim     | waiting 10s for server:443
+client  | Setting up routes...
+client  | Actual changes:
+client  | tx-checksum-ip-generic: off
+client  | tx-tcp-segmentation: off [not requested]
+client  | tx-tcp-ecn-segmentation: off [not requested]
+client  | tx-tcp-mangleid-segmentation: off [not requested]
+client  | tx-tcp6-segmentation: off [not requested]
+client  | tx-checksum-sctp: off
+server  | Setting up routes...
+server  | Actual changes:
+server  | tx-checksumming: off
+server  | 	tx-checksum-ip-generic: off
+server  | 	tx-checksum-sctp: off
+server  | tcp-segmentation-offload: off
+server  | 	tx-tcp-segmentation: off [requested on]
+server  | 	tx-tcp-ecn-segmentation: off [requested on]
+server  | 	tx-tcp-mangleid-segmentation: off [requested on]
+server  | 	tx-tcp6-segmentation: off [requested on]
+client  | Endpoint's IPv4 address is 193.167.0.100
+server  | Endpoint's IPv4 address is 193.167.100.100
+client  | Endpoint's IPv6 address is fd00:cafe:cafe::100
+server  | Endpoint's IPv6 address is fd00:cafe:cafe:100::100
+server  | supported
+server  | ## Starting quiche server...
+server  | ## Server params: 
+server  | ## Test case: transfer
+client  | wait-for-it.sh: waiting 30 seconds for sim:57832
+sim     | server:443 is available after 1.02401352s
+sim     | Using scenario: simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400
+client  | wait-for-it.sh: sim:57832 is available after 1 seconds
+client exited with code 0
+Aborting on container exit...
+ Container client  Stopping
+ Container server  Stopping
+ Container client  Stopped
+ Container server  Stopped
+ Container sim  Stopping
+ Container sim  Stopped
+
+2024-07-12 12:46:24,154 Using the client's key log file.
+2024-07-12 12:46:25,135 Check of downloaded files succeeded.
+2024-07-12 12:46:25,135 Using the client's key log file.
+2024-07-12 12:46:47,217 Transfering 10 MB took 17459 ms. Goodput: 4804 kbps

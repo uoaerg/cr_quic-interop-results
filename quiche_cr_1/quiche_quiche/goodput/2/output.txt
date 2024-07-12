@@ -1,0 +1,62 @@
+2024-07-12 12:54:23,232 Generated random file: vmgxstnkgw of size: 10485760
+2024-07-12 12:54:23,232 Requests: https://server4:443/vmgxstnkgw
+2024-07-12 12:54:23,268 
+2024-07-12 12:54:23,268 Command: WAITFORSERVER=server:443 CERTS=/tmp/certs_x04ej91p/ TESTCASE_SERVER=transfer TESTCASE_CLIENT=transfer WWW=/tmp/www_dz41ofci/ DOWNLOADS=/tmp/download_edszmkw5/ SERVER_LOGS=/tmp/logs_server_c3ev2tqi CLIENT_LOGS=/tmp/logs_client_b5bon3e0 SCENARIO="simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400" CLIENT=ana0/quiche-qns:latest SERVER=ana0/quiche-qns:latest REQUESTS="https://server4:443/vmgxstnkgw" VERSION="0x1"  docker compose --env-file empty.env up --abort-on-container-exit --timeout 1 sim client server 
+2024-07-12 12:55:09,840 time="2024-07-12T12:54:23Z" level=warning msg="/home/admin/ORIGINAL0INTEROP/quic-interop-runner/docker-compose.yml: `version` is obsolete"
+ Container sim  Created
+ Container client  Recreate
+ Container server  Recreate
+ Container client  Recreated
+ Container server  Recreated
+Attaching to client, server, sim
+sim     | waiting 10s for server:443
+client  | Setting up routes...
+client  | Actual changes:
+client  | tx-checksumming: off
+client  | 	tx-checksum-ip-generic: off
+client  | 	tx-checksum-sctp: off
+client  | tcp-segmentation-offload: off
+client  | 	tx-tcp-segmentation: off [requested on]
+client  | 	tx-tcp-ecn-segmentation: off [requested on]
+client  | 	tx-tcp-mangleid-segmentation: off [requested on]
+client  | 	tx-tcp6-segmentation: off [requested on]
+client  | Endpoint's IPv4 address is 193.167.0.100
+client  | Endpoint's IPv6 address is fd00:cafe:cafe::100
+client  | supported
+client  | wait-for-it.sh: waiting 30 seconds for sim:57832
+server  | Setting up routes...
+server  | Actual changes:
+server  | tx-checksumming: off
+server  | 	tx-checksum-ip-generic: off
+server  | 	tx-checksum-sctp: off
+server  | tcp-segmentation-offload: off
+server  | 	tx-tcp-segmentation: off [requested on]
+server  | 	tx-tcp-ecn-segmentation: off [requested on]
+server  | 	tx-tcp-mangleid-segmentation: off [requested on]
+server  | 	tx-tcp6-segmentation: off [requested on]
+server  | Endpoint's IPv4 address is 193.167.100.100
+server  | Endpoint's IPv6 address is fd00:cafe:cafe:100::100
+server  | supported
+server  | ## Starting quiche server...
+server  | ## Server params: 
+server  | ## Test case: transfer
+sim     | server:443 is available after 1.016547904s
+sim     | Using scenario: simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400
+client  | wait-for-it.sh: sim:57832 is available after 1 seconds
+client  | ## Starting quiche client...
+client  | ## Client params: 
+client  | ## Requests: https://server4:443/vmgxstnkgw
+client  | ## Test case: transfer
+client exited with code 0
+Aborting on container exit...
+ Container server  Stopping
+ Container client  Stopping
+ Container client  Stopped
+ Container server  Stopped
+ Container sim  Stopping
+ Container sim  Stopped
+
+2024-07-12 12:55:10,073 Using the client's key log file.
+2024-07-12 12:55:11,123 Check of downloaded files succeeded.
+2024-07-12 12:55:11,123 Using the client's key log file.
+2024-07-12 12:55:36,153 Transfering 10 MB took 24321 ms. Goodput: 3449 kbps

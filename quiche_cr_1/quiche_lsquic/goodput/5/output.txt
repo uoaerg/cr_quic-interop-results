@@ -1,0 +1,65 @@
+2024-07-12 13:36:57,462 Generated random file: hfrfabcghg of size: 10485760
+2024-07-12 13:36:57,462 Requests: https://server4:443/hfrfabcghg
+2024-07-12 13:36:57,498 
+2024-07-12 13:36:57,498 Command: WAITFORSERVER=server:443 CERTS=/tmp/certs_mjkk_gj5/ TESTCASE_SERVER=transfer TESTCASE_CLIENT=transfer WWW=/tmp/www_of4de5im/ DOWNLOADS=/tmp/download_f887trpv/ SERVER_LOGS=/tmp/logs_server_fuscizce CLIENT_LOGS=/tmp/logs_client_qpz3xwxq SCENARIO="simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400" CLIENT=litespeedtech/lsquic-qir:latest SERVER=ana0/quiche-qns:latest REQUESTS="https://server4:443/hfrfabcghg" VERSION="0x1"  docker compose --env-file empty.env up --abort-on-container-exit --timeout 1 sim client server 
+2024-07-12 13:37:31,037 time="2024-07-12T13:36:57Z" level=warning msg="/home/admin/ORIGINAL0INTEROP/quic-interop-runner/docker-compose.yml: `version` is obsolete"
+ Container sim  Created
+ Container client  Recreate
+ Container server  Recreate
+ Container server  Recreated
+ Container client  Recreated
+Attaching to client, server, sim
+sim     | waiting 10s for server:443
+server  | Setting up routes...
+server  | Actual changes:
+server  | tx-checksumming: off
+server  | 	tx-checksum-ip-generic: off
+server  | 	tx-checksum-sctp: off
+server  | tcp-segmentation-offload: off
+server  | 	tx-tcp-segmentation: off [requested on]
+server  | 	tx-tcp-ecn-segmentation: off [requested on]
+server  | 	tx-tcp-mangleid-segmentation: off [requested on]
+server  | 	tx-tcp6-segmentation: off [requested on]
+server  | Endpoint's IPv4 address is 193.167.100.100
+server  | Endpoint's IPv6 address is fd00:cafe:cafe:100::100
+server  | supported
+server  | ## Starting quiche server...
+server  | ## Server params: 
+server  | ## Test case: transfer
+client  | Setting up routes...
+client  | Actual changes:
+client  | tx-checksumming: off
+client  | 	tx-checksum-ip-generic: off
+client  | 	tx-checksum-sctp: off
+client  | tcp-segmentation-offload: off
+client  | 	tx-tcp-segmentation: off [requested on]
+client  | 	tx-tcp-ecn-segmentation: off [requested on]
+client  | 	tx-tcp-mangleid-segmentation: off [requested on]
+client  | 	tx-tcp6-segmentation: off [requested on]
+client  | Endpoint's IPv4 address is 193.167.0.100
+client  | Endpoint's IPv6 address is fd00:cafe:cafe::100
+client  | wait-for-it.sh: waiting 30 seconds for sim:57832
+sim     | server:443 is available after 1.002359119s
+sim     | Using scenario: simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400
+client  | wait-for-it.sh: sim:57832 is available after 1 seconds
+client  | TEST_PARAMS:
+client  | REQUESTS: 'https://server4:443/hfrfabcghg'
+client  | paths: -p /hfrfabcghg
+client  | server: server4
+client  | port: 443
+client  | CLIENT_PARAMS:
+client  | /logs/5B7C2E55B1770F95.keys
+client  | /logs/keys.log exists
+client exited with code 0
+Aborting on container exit...
+ Container client  Stopping
+ Container server  Stopping
+ Container client  Stopped
+ Container server  Stopped
+ Container sim  Stopping
+ Container sim  Stopped
+
+2024-07-12 13:37:31,256 Using the client's key log file.
+2024-07-12 13:37:32,242 Check of downloaded files succeeded.
+2024-07-12 13:37:32,242 Using the client's key log file.
+2024-07-12 13:37:53,036 Transfering 10 MB took 18183 ms. Goodput: 4613 kbps
