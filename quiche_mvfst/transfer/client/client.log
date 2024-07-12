@@ -1,7 +1,0 @@
-I20240712 12:50:36.628280    42 HQClient.cpp:50] HQClient connecting to 193.167.100.100:443
-I20240712 12:50:37.842231    42 CurlClient.cpp:187] Sending request for /qlnbwsabrp
-I20240712 12:50:37.842378    42 CurlClient.cpp:187] Sending request for /tyksgcvtda
-I20240712 12:50:37.842486    42 CurlClient.cpp:187] Sending request for /wniutyeaeh
-I20240712 12:50:54.706888    42 CurlClient.cpp:273] Got EOM for /qlnbwsabrp. Txn Time= 16864 ms
-I20240712 12:51:00.460222    42 CurlClient.cpp:273] Got EOM for /tyksgcvtda. Txn Time= 22617 ms
-I20240712 12:51:12.470657    42 CurlClient.cpp:273] Got EOM for /wniutyeaeh. Txn Time= 34628 ms
