@@ -1,0 +1,64 @@
+2024-07-12 13:11:25,746 Generated random file: xdqoriaavw of size: 10485760
+2024-07-12 13:11:25,746 Requests: https://server4:443/xdqoriaavw
+2024-07-12 13:11:25,784 
+2024-07-12 13:11:25,784 Command: WAITFORSERVER=server:443 CERTS=/tmp/certs_o8t_hty0/ TESTCASE_SERVER=transfer TESTCASE_CLIENT=transfer WWW=/tmp/www_ze_8r96z/ DOWNLOADS=/tmp/download_3r90gzc6/ SERVER_LOGS=/tmp/logs_server__cr33641 CLIENT_LOGS=/tmp/logs_client_1krxujir SCENARIO="simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400" CLIENT=aiortc/aioquic-qns:latest SERVER=ana0/quiche-qns:latest REQUESTS="https://server4:443/xdqoriaavw" VERSION="0x1"  docker compose --env-file empty.env up --abort-on-container-exit --timeout 1 sim client server 
+2024-07-12 13:12:09,906 time="2024-07-12T13:11:25Z" level=warning msg="/home/admin/ORIGINAL0INTEROP/quic-interop-runner/docker-compose.yml: `version` is obsolete"
+ Container sim  Created
+ Container client  Recreate
+ Container server  Recreate
+ Container client  Recreated
+ Container server  Recreated
+Attaching to client, server, sim
+sim     | waiting 10s for server:443
+server  | Setting up routes...
+server  | Actual changes:
+server  | tx-checksumming: off
+server  | 	tx-checksum-ip-generic: off
+server  | 	tx-checksum-sctp: off
+server  | tcp-segmentation-offload: off
+server  | 	tx-tcp-segmentation: off [requested on]
+server  | 	tx-tcp-ecn-segmentation: off [requested on]
+server  | 	tx-tcp-mangleid-segmentation: off [requested on]
+server  | 	tx-tcp6-segmentation: off [requested on]
+server  | Endpoint's IPv4 address is 193.167.100.100
+server  | Endpoint's IPv6 address is fd00:cafe:cafe:100::100
+client  | Setting up routes...
+client  | Actual changes:
+client  | tx-checksumming: off
+client  | 	tx-checksum-ip-generic: off
+client  | 	tx-checksum-sctp: off
+client  | tcp-segmentation-offload: off
+client  | 	tx-tcp-segmentation: off [requested on]
+client  | 	tx-tcp-ecn-segmentation: off [requested on]
+client  | 	tx-tcp-mangleid-segmentation: off [requested on]
+client  | 	tx-tcp6-segmentation: off [requested on]
+server  | supported
+server  | ## Starting quiche server...
+server  | ## Server params: 
+server  | ## Test case: transfer
+client  | Endpoint's IPv4 address is 193.167.0.100
+client  | Endpoint's IPv6 address is fd00:cafe:cafe::100
+client  | wait-for-it.sh: waiting 30 seconds for sim:57832
+sim     | server:443 is available after 1.006604311s
+sim     | Using scenario: simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400
+client  | wait-for-it.sh: sim:57832 is available after 1 seconds
+client  | Starting client
+client exited with code 0
+Aborting on container exit...
+ Container client  Stopping
+ Container server  Stopping
+ Container client  Stopped
+ Container server  Stopped
+ Container sim  Stopping
+ Container sim  Stopped
+
+2024-07-12 13:12:10,121 Using the client's key log file.
+2024-07-12 13:12:10,660 TShark (pid 237841) seems to have crashed (retcode: 2).
+Last error line: tshark: The file "/tmp/logs_sim_7eq_3twl/trace_node_right.pcap" appears to have been cut short in the middle of a packet.
+Try rerunning in debug mode [ capture_obj.set_debug() ] or try updating tshark.
+2024-07-12 13:12:11,199 TShark (pid 237847) seems to have crashed (retcode: 2).
+Last error line: tshark: The file "/tmp/logs_sim_7eq_3twl/trace_node_right.pcap" appears to have been cut short in the middle of a packet.
+Try rerunning in debug mode [ capture_obj.set_debug() ] or try updating tshark.
+2024-07-12 13:12:11,205 Check of downloaded files succeeded.
+2024-07-12 13:12:11,205 Using the client's key log file.
+2024-07-12 13:12:33,891 Transfering 10 MB took 21291 ms. Goodput: 3939 kbps

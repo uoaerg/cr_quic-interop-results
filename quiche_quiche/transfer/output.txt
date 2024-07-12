@@ -1,0 +1,59 @@
+2024-07-12 12:52:24,705 Generated random file: dgbcphjyva of size: 2097152
+2024-07-12 12:52:24,715 Generated random file: bdyxswtokx of size: 3145728
+2024-07-12 12:52:24,730 Generated random file: jcximdiscs of size: 5242880
+2024-07-12 12:52:24,730 Requests: https://server4:443/dgbcphjyva https://server4:443/bdyxswtokx https://server4:443/jcximdiscs
+2024-07-12 12:52:24,766 
+2024-07-12 12:52:24,766 Command: WAITFORSERVER=server:443 CERTS=/tmp/certs_jznfbuhd/ TESTCASE_SERVER=transfer TESTCASE_CLIENT=transfer WWW=/tmp/www_f45itogl/ DOWNLOADS=/tmp/download_ijtfav9s/ SERVER_LOGS=/tmp/logs_server_qos4_502 CLIENT_LOGS=/tmp/logs_client__mcw9ovd SCENARIO="simple-p2p --delay=600ms --bandwidth=7Mbps --queue=400" CLIENT=ana0/quiche-qns:latest SERVER=ana0/quiche-qns:latest REQUESTS="https://server4:443/dgbcphjyva https://server4:443/bdyxswtokx https://server4:443/jcximdiscs" VERSION="0x1"  docker compose --env-file empty.env up --abort-on-container-exit --timeout 1 sim client server 
+2024-07-12 12:53:09,390 time="2024-07-12T12:52:24Z" level=warning msg="/home/admin/ORIGINAL0INTEROP/quic-interop-runner/docker-compose.yml: `version` is obsolete"
+ Container sim  Running
+ Container server  Recreate
+ Container client  Recreate
+ Container server  Recreated
+ Container client  Recreated
+Attaching to client, server, sim
+server  | Setting up routes...
+client  | Setting up routes...
+client  | Actual changes:
+client  | tx-checksumming: off
+client  | 	tx-checksum-ip-generic: off
+client  | 	tx-checksum-sctp: off
+client  | tcp-segmentation-offload: off
+client  | 	tx-tcp-segmentation: off [requested on]
+client  | 	tx-tcp-ecn-segmentation: off [requested on]
+client  | 	tx-tcp-mangleid-segmentation: off [requested on]
+client  | 	tx-tcp6-segmentation: off [requested on]
+client  | Endpoint's IPv4 address is 193.167.0.100
+server  | Actual changes:
+server  | tx-checksumming: off
+server  | 	tx-checksum-ip-generic: off
+server  | 	tx-checksum-sctp: off
+server  | tcp-segmentation-offload: off
+server  | 	tx-tcp-segmentation: off [requested on]
+server  | 	tx-tcp-ecn-segmentation: off [requested on]
+server  | 	tx-tcp-mangleid-segmentation: off [requested on]
+server  | 	tx-tcp6-segmentation: off [requested on]
+server  | Endpoint's IPv4 address is 193.167.100.100
+server  | Endpoint's IPv6 address is fd00:cafe:cafe:100::100
+client  | Endpoint's IPv6 address is fd00:cafe:cafe::100
+server  | supported
+server  | ## Starting quiche server...
+server  | ## Server params: 
+server  | ## Test case: transfer
+client  | supported
+client  | wait-for-it.sh: waiting 30 seconds for sim:57832
+client  | wait-for-it.sh: sim:57832 is available after 1 seconds
+client  | ## Starting quiche client...
+client  | ## Client params: 
+client  | ## Requests: https://server4:443/dgbcphjyva https://server4:443/bdyxswtokx https://server4:443/jcximdiscs
+client  | ## Test case: transfer
+client exited with code 0
+Aborting on container exit...
+ Container client  Stopping
+ Container server  Stopping
+ Container client  Stopped
+ Container server  Stopped
+ Container sim  Stopping
+ Container sim  Stopped
+
+2024-07-12 12:53:09,652 Using the client's key log file.
+2024-07-12 12:53:10,296 Expected exactly 1 handshake. Got: 2
